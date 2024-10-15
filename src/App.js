@@ -1,10 +1,19 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+//COMPONENTS
+import Listing from "./components/Listing";
+import Details from "./components/Details";
+import Cart from "./components/Cart";
 
 function App() {
 return (
-  <div className="app">
-    <h1 className="text-red-600 text-center">My App setup</h1>
-
-  </div>
+  <BrowserRouter>
+  <Routes>
+    <Route path="/" element={<Listing/>} />
+    <Route path="/details" element={<Details/>} />
+    <Route path="/cart" element={<Cart/>} />
+  </Routes>
+  </BrowserRouter>
 );
 }
 
