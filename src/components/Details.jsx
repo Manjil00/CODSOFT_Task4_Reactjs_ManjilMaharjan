@@ -1,12 +1,12 @@
 import React from 'react'
 import Nav from './Nav';
 
-import { UseSelector, UseDispatch } from "react-redux";
+import { useSelector , useDispatch } from "react-redux";
 import {incrNum, decrNum} from "../actions/index";
 
 const Details = () => {
 
-const mystate= useSelector ((state)=>state.changeNum);
+const mystate= useSelector ((state)=>state.Numchange);
 const dispatch= useDispatch();
 
 
@@ -27,12 +27,12 @@ return (
                     animi minima asperdsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfiores ratione laborum?</p>
 
                 <div className="incrDecr mt-5 bg-green-800 h-[50px] w-[200px] rounded-xl flex justify-between items-center">
-                    <button onClick={()=>dispatch(incrNum())}
+                    <button onClick={()=>dispatch(decrNum())}
                     className='h-[50px] w-[50px] rounded-tl-xl rounded-bl-xl  text-white'>-</button>
                     
-                    <h1 className='font-bold font-sans text-center'>0</h1>
+                    <h1 className='font-bold font-sans text-center'>{mystate}</h1>
                     
-                    <button  onClick={()=>dispatch(decrNum())}
+                    <button  onClick={()=>dispatch(incrNum())}
                     className='h-[50px] w-[50px] rounded-tr-xl rounded-br-xl text-white '>+</button>
 
                 </div>
