@@ -1,5 +1,6 @@
 import React from 'react'
 import Nav from './Nav';
+import { Link } from 'react-router-dom';
 
 import { useSelector , useDispatch } from "react-redux";
 import {incrNum, decrNum} from "../actions/index";
@@ -37,8 +38,8 @@ return (
 
                 </div>
 
-                <button
-                className='h-[50px] w-[150px] bg-green-600 rounded-xl mt-5'>Add To Cart</button>
+                <Link to="/cart"><button
+                className='h-[50px] w-[150px] bg-green-600 rounded-xl mt-5'>Add To Cart</button></Link>
         </div>
 
         </div>
