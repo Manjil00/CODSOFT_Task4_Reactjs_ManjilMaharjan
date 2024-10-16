@@ -1,7 +1,6 @@
 import {combineReducer} from "redux";
-
 import Numchange from "./incrdecr";
 
-const rootreducer=combineReducer({Numchange});
+const rootReducer=combineReducer({Numchange});
 
-export default rootreducer;
+export default rootReducer;
