@@ -3,7 +3,19 @@ import Nav from "./Nav";
 //ICONS
 import { RiDeleteBin5Line } from "react-icons/ri";
 
+import { useSelector , useDispatch } from "react-redux";
+// import {incrNum, decrNum} from "../actions/index";
+
+
 const Cart = () => {
+    
+    const {id} = useParams();
+    const products=useSelector((state)=>state.products.products);
+    const productdetails=products.find((item)=>item.id===parseInt(id));
+
+// const mystate= useSelector ((state)=>state.Numchange);
+// const dispatch= useDispatch();
+
 return (
     <div className='main w-full h-[800px] bg-appleblack'>
     <Nav/>

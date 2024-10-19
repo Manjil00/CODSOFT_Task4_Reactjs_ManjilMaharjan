@@ -12,7 +12,7 @@ return (
   <Routes>
     <Route path="/" element={<Listing/>} />
     <Route path="/details/:id" element={<Details/>} />
-    <Route path="/cart" element={<Cart/>} />
+    <Route path="/cart/:id" element={<Cart/>} />
   </Routes>
   </BrowserRouter>
 );
