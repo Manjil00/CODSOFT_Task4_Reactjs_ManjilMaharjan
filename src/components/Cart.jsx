@@ -8,7 +8,7 @@ return (
     <div className='main w-full h-[800px] bg-appleblack'>
     <Nav/>
 
-    <div className="cartSection bg-red-600 p-5">
+    <div className="cartSection p-5">
         
         <div className="product1 h-[150px] w-full bg-green-500 flex justify-evenly items-center">
             <img src='../images/testpic.jpg' className='h-[150px] w-[150px]' alt='productimg'/>

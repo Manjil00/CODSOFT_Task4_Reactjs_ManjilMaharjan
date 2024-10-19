@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { RxCross1, RxHamburgerMenu } from "react-icons/rx"; //ICONS
+import { Link } from 'react-router-dom';
 
 
 const Nav = () => {
@@ -16,7 +17,7 @@ cursor-pointer flex justify-center items-center'>Product Catalog</h1>
     <div className={`absolute min-h-[30vh] left-0 top-[90%] w-full p-5 bg-appleblack text-white flex flex-col md:static md:flex md:min-h-fit md:w-auto gap-9 text-sm ${isNavOpen ? 'block' : 'hidden'}`}>
         <ul className=" cursor-pointer flex flex-col gap-4 md:flex-row  md:gap-8 md:justify-evenly md:text-xl font-sans">
         <li className="hover:text-slate-600">Home</li>
-        <li className="hover:text-slate-600">Products</li>
+        <Link to="/"><li className="hover:text-slate-600">Products</li></Link>
         <li className="hover:text-slate-600">Blogs</li>
         <li className="hover:text-slate-600">About us</li>
         </ul>

@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 //Components
 import Nav from './Nav';
 
+
 //ICONS
 import { FaSearch } from "react-icons/fa";
+import { mockdata } from '../mockdata';
 
 
 
@@ -21,44 +23,21 @@ return (
     </div>
 
     <div className="productsNav w-full h-auto p-5 mx-4 flex flex-wrap justify-start items-start gap-20">
-        <div className="Cardsections1 h-[290px] w-[250px] p-3 md:h-[390px] md:w-[300px] flex flex-col justify-start items-center gap-2 flex-grow-0 flex-shrink-0 rounded-xl bg-white">
-            <img src='../images/testpic.jpg' className=' h-[150px] md:h-[230px] w-[90%] rounded-xl' alt='cardphoto'/>
-            <h1 className='font-sans text-sm md:text-xl font-bold'>Test1</h1>
-            <h1 className='font-sans text-sm md:text-xl font-semibold'>$ Price</h1>
-            <Link to="/details"><button 
-            className='h-[50px] w-[150px] p-2 bg-red-600 rounded-xl text-white'>Show Details</button></Link>
-        </div>
-        <div className="Cardsections1 h-[290px] w-[250px] p-3 md:h-[390px] md:w-[300px] flex flex-col justify-start items-center gap-2 flex-grow-0 flex-shrink-0 rounded-xl bg-white">
-            <img src='../images/testpic.jpg' className=' h-[150px] md:h-[230px] w-[90%] rounded-xl' alt='cardphoto'/>
-            <h1 className='font-sans text-sm md:text-xl font-bold'>Test1</h1>
-            <h1 className='font-sans text-sm md:text-xl font-semibold'>$ Price</h1>
-            <button className='h-[50px] w-[150px] p-2 bg-red-600 rounded-xl text-white'>Show Details</button>
-        </div>
-        <div className="Cardsections1 h-[290px] w-[250px] p-3 md:h-[390px] md:w-[300px] flex flex-col justify-start items-center gap-2 flex-grow-0 flex-shrink-0 rounded-xl bg-white">
-            <img src='../images/testpic.jpg' className=' h-[150px] md:h-[230px] w-[90%] rounded-xl' alt='cardphoto'/>
-            <h1 className='font-sans text-sm md:text-xl font-bold'>Test1</h1>
-            <h1 className='font-sans text-sm md:text-xl font-semibold'>$ Price</h1>
-            <button className='h-[50px] w-[150px] p-2 bg-red-600 rounded-xl text-white'>Show Details</button>
-        </div>
-        <div className="Cardsections1 h-[290px] w-[250px] p-3 md:h-[390px] md:w-[300px] flex flex-col justify-start items-center gap-2 flex-grow-0 flex-shrink-0 rounded-xl bg-white">
-            <img src='../images/testpic.jpg' className=' h-[150px] md:h-[230px] w-[90%] rounded-xl' alt='cardphoto'/>
-            <h1 className='font-sans text-sm md:text-xl font-bold'>Test1</h1>
-            <h1 className='font-sans text-sm md:text-xl font-semibold'>$ Price</h1>
-            <button className='h-[50px] w-[150px] p-2 bg-red-600 rounded-xl text-white'>Show Details</button>
-        </div>
-        <div className="Cardsections1 h-[290px] w-[250px] p-3 md:h-[390px] md:w-[300px] flex flex-col justify-start items-center gap-2 flex-grow-0 flex-shrink-0 rounded-xl bg-white">
-            <img src='../images/testpic.jpg' className=' h-[150px] md:h-[230px] w-[90%] rounded-xl' alt='cardphoto'/>
-            <h1 className='font-sans text-sm md:text-xl font-bold'>Test1</h1>
-            <h1 className='font-sans text-sm md:text-xl font-semibold'>$ Price</h1>
-            <button className='h-[50px] w-[150px] p-2 bg-red-600 rounded-xl text-white'>Show Details</button>
-        </div>
-        <div className="Cardsections1 h-[290px] w-[250px] p-3 md:h-[390px] md:w-[300px] flex flex-col justify-start items-center gap-2 flex-grow-0 flex-shrink-0 rounded-xl bg-white">
-            <img src='../images/testpic.jpg' className=' h-[150px] md:h-[230px] w-[90%] rounded-xl' alt='cardphoto'/>
-            <h1 className='font-sans text-sm md:text-xl font-bold'>Test1</h1>
-            <h1 className='font-sans text-sm md:text-xl font-semibold'>$ Price</h1>
-            <button className='h-[50px] w-[150px] p-2 bg-red-600 rounded-xl text-white'>Show Details</button>
-        </div>
 
+        {
+            mockdata.map((item)=>{
+                return(
+                    <div key={item.id}
+                    className="Cardsections1 h-[290px] w-[250px] p-3 md:h-[390px] md:w-[300px] flex flex-col justify-start items-center gap-2 flex-grow-0 flex-shrink-0 rounded-xl bg-white">
+                    <img src='../images/testpic.jpg' className=' h-[150px] md:h-[230px] w-[90%] rounded-xl' alt='cardphoto'/>
+                    <h1 className='font-sans text-sm md:text-xl font-bold'>{item.productname}</h1>
+                    <h1 className='font-sans text-sm md:text-xl font-semibold'>{item.price}</h1>
+                    <Link to={`/details/${item.id}`}><button
+                    className='h-[50px] w-[150px] p-2 bg-red-600 rounded-xl text-white'>Show Details</button></Link>
+                </div>
+                )
+            })
+        }
     </div>
     </div>
 )

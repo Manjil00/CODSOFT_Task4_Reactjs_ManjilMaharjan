@@ -1,11 +1,18 @@
 import React from 'react'
 import Nav from './Nav';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import { useSelector , useDispatch } from "react-redux";
 import {incrNum, decrNum} from "../actions/index";
 
+import { mockdata } from '../mockdata';
+
+
 const Details = () => {
+
+    const {id} = useParams();
+    const productdetails=mockdata.find((item)=>item.id===parseInt(id));
+
 
 const mystate= useSelector ((state)=>state.Numchange);
 const dispatch= useDispatch();
@@ -21,7 +28,7 @@ return (
             <img src='../images/testpic.jpg' className='h-[250px] w-[40%] md:h-[500px] md:w-[40%] rounded-xl' alt='img'/>
         
         <div className="description h-auto w-[40%] flex flex-col justify-start items-start gap-5 ">
-                <h1 className='font-sans font-bold text-start text-2xl md:text-4xl text-white'>Insta 360 X3 Camera</h1>
+                <h1 className='font-sans font-bold text-start text-2xl md:text-4xl text-white'>{productdetails.productname}</h1>
                 <p className='font-sans text-start text-sm md:text-xl text-white'>Lorem, ipsum dolor sit amet consectetur
                     adipisicing elit. Nobis saepe ipsum, eius exercitationem rem nulla?
                     Delectus explicabo nisi aspernatur, dolorem aliquam fuga praesentium corrup,kj,jhhjjh,h,hj,hj,jh,jh,jh,jh,jh,jhti laboriosamdsfsfdsfdsfdsfds
