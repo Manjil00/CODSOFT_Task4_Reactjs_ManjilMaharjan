@@ -5,13 +5,13 @@ import { Link, useParams } from 'react-router-dom';
 import { useSelector , useDispatch } from "react-redux";
 import {incrNum, decrNum} from "../actions/index";
 
-import { mockdata } from '../mockdata';
 
 
 const Details = () => {
 
     const {id} = useParams();
-    const productdetails=mockdata.find((item)=>item.id===parseInt(id));
+    const products=useSelector((state)=>state.products.products);
+    const productdetails=products.find((item)=>item.id===parseInt(id));
 
 
 const mystate= useSelector ((state)=>state.Numchange);
@@ -25,10 +25,10 @@ return (
     <div className="details bg-appleblack h-[87vh] w-full p-2 md:p-5 mt-5">
         <div className="productdetails flex justify-evenly items-start">
 
-            <img src='../images/testpic.jpg' className='h-[250px] w-[40%] md:h-[500px] md:w-[40%] rounded-xl' alt='img'/>
+            <img src={productdetails.image} className='h-[250px] w-[40%] md:h-[500px] md:w-[40%] rounded-xl' alt='img'/>
         
         <div className="description h-auto w-[40%] flex flex-col justify-start items-start gap-5 ">
-                <h1 className='font-sans font-bold text-start text-2xl md:text-4xl text-white'>{productdetails.productname}</h1>
+                <h1 className='font-sans font-bold text-start text-2xl md:text-4xl text-white'>{productdetails.title}</h1>
                 <p className='font-sans text-start text-sm md:text-xl text-white'>Lorem, ipsum dolor sit amet consectetur
                     adipisicing elit. Nobis saepe ipsum, eius exercitationem rem nulla?
                     Delectus explicabo nisi aspernatur, dolorem aliquam fuga praesentium corrup,kj,jhhjjh,h,hj,hj,jh,jh,jh,jh,jh,jhti laboriosamdsfsfdsfdsfdsfds
