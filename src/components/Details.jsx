@@ -45,9 +45,14 @@ return (
 
                 </div>
 
+        <div className="btns flex justify-evenly items-center gap-6">
+
                 <Link to="/cart"><button
                 className='h-[50px] w-[150px] bg-green-600 rounded-xl mt-5'>Add To Cart</button></Link>
+                <button className='h-[50px] w-[150px] bg-green-600 rounded-xl mt-5'>Buy now</button>
         </div>
+                </div>
+        
 
         </div>
     </div>

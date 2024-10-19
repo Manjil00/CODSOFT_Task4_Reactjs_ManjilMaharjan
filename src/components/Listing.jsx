@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
 //Components
@@ -12,6 +12,23 @@ import { mockdata } from '../mockdata';
 
 
 const Listing = () => {
+
+    const [data, setData]=useState([]);
+
+    useEffect(()=>{
+        const fetchApi= async ()=>{
+            try{
+                const res= await fetch('https://fakestoreapi.com/products?limit=5');
+                const Apidata= await res.json();
+                setData(Apidata);
+
+            }catch(err){
+                console.log(err);
+            }
+        };
+        fetchApi();
+    },[])
+
 return (
     <div className='main-container w-full h-auto bg-appleblack'>
     <Nav/>
@@ -25,14 +42,15 @@ return (
     <div className="productsNav w-full h-auto p-5 mx-4 flex flex-wrap justify-start items-start gap-20">
 
         {
-            mockdata.map((item)=>{
+            data.map((item)=>{
+                const{id, price, title,image}=item;
                 return(
-                    <div key={item.id}
-                    className="Cardsections1 h-[290px] w-[250px] p-3 md:h-[390px] md:w-[300px] flex flex-col justify-start items-center gap-2 flex-grow-0 flex-shrink-0 rounded-xl bg-white">
-                    <img src='../images/testpic.jpg' className=' h-[150px] md:h-[230px] w-[90%] rounded-xl' alt='cardphoto'/>
-                    <h1 className='font-sans text-sm md:text-xl font-bold'>{item.productname}</h1>
-                    <h1 className='font-sans text-sm md:text-xl font-semibold'>{item.price}</h1>
-                    <Link to={`/details/${item.id}`}><button
+                    <div key={id}
+                    className="Cardsections1 h-auto w-[250px] p-3 md:h-[390px] md:w-[300px] flex flex-col justify-start items-center gap-2 flex-grow-0 flex-shrink-0 rounded-xl bg-white">
+                    <img src={image} className=' h-[150px] md:h-[230px] w-[90%] rounded-xl' alt='cardphoto'/>
+                    <h1 className='font-sans text-sm md:text-xl font-bold'>{title}</h1>
+                    <h1 className='font-sans text-sm md:text-xl font-semibold'>$ {price}</h1>
+                    <Link to={`/details/${id}`}><button
                     className='h-[50px] w-[150px] p-2 bg-red-600 rounded-xl text-white'>Show Details</button></Link>
                 </div>
                 )
