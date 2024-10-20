@@ -24,7 +24,7 @@ return (
         
         <div className="product1 h-[150px] w-full bg-slate-300 flex justify-evenly items-center rounded-xl">
             <img src='../images/testpic.jpg' className='h-[150px] w-[150px]' alt='productimg'/>
-            <h1 className='text-black font-semibold font-sans text-xl md:text-2xl'>Insta 360 X3 Camera</h1>
+            <h1 className='text-black font-semibold font-sans text-xl md:text-2xl'>{productdetails.title}</h1>
             <p className='text-black font-sans text-sm md:text-xl'> Quantity: 10</p>
             <button className='h-[100px] w-[100px]'><RiDeleteBin5Line /></button>
         </div>
