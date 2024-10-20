@@ -10,7 +10,6 @@ import { FaSearch } from "react-icons/fa";
 
 import { setProducts } from '../actions/product';
 
-
 const Listing = () => {
 
     const [data, setData]=useState([]);
@@ -37,8 +36,7 @@ return (
 
     <div className="searchabr h-[80px] w-full flex justify-center items-center">
         <input type="text" placeholder="Search for a Product" className="searchabr-input px-5 h-[50px] w-[80%] rounded-tl-xl rounded-bl-xl"/>
-        <button 
-        className='h-[50px] w-[50px] bg-white rounded-tr-xl rounded-br-xl'><FaSearch /></button>
+        <button className='h-[50px] w-[50px] bg-white rounded-tr-xl rounded-br-xl'><FaSearch /></button>
     </div>
 
     <div className="productsNav w-full h-auto p-5 mx-4 flex flex-wrap justify-start items-start gap-20">

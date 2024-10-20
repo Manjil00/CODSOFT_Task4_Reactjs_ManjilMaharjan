@@ -3,7 +3,8 @@ import Numchange from "./incrdecr";
 import productReducer from "./productReducer";
 import cartReducer from "./cartReducer";
 
-const rootReducer = combineReducers({Numchange,
+const rootReducer = combineReducers({
+    Numchange,
     products: productReducer,
     cart: cartReducer,
 });

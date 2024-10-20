@@ -5,6 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useSelector , useDispatch } from "react-redux";
 import {incrNum, decrNum} from "../actions/index";
 
+import { addToCart } from '../actions/cart';
 
 
 const Details = () => {
@@ -17,6 +18,9 @@ const Details = () => {
 const mystate= useSelector ((state)=>state.Numchange);
 const dispatch= useDispatch();
 
+const handleaddtoCart=()=>{
+    dispatch(addToCart(product));
+};
 
 return (
     <div className="main w-full h-[100vh] bg-appleblack">
@@ -47,7 +51,7 @@ return (
 
         <div className="btns flex justify-evenly items-center gap-6">
 
-                <Link to="/cart"><button
+                <Link to="/cart"><button onClick={handleaddtoCart}
                 className='h-[50px] w-[150px] bg-green-600 rounded-xl mt-5'>Add To Cart</button></Link>
                 <button className='h-[50px] w-[150px] bg-green-600 rounded-xl mt-5'>Buy now</button>
         </div>
