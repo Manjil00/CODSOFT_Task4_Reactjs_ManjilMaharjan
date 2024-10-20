@@ -1,5 +1,5 @@
 const initialstate={
-    cartitems:[],
+    cartItems:[],
 };
 
 const cartReducer =(state=initialstate,action)=>{
@@ -7,7 +7,7 @@ const cartReducer =(state=initialstate,action)=>{
         case ADD_TO_CART : 
         return{
             ...state,
-            cartitems: [...state.cartitems,action.payload]
+            cartItems: [...state.cartItems,action.payload]
         };
         default: return state;
     };
