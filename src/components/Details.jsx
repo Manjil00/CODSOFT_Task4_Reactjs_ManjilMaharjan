@@ -1,11 +1,15 @@
 import React from 'react'
 import Nav from './Nav';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { useSelector , useDispatch } from "react-redux";
 import {incrNum, decrNum} from "../actions/index";
 
-import { addToCart } from '../actions/cart';
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+
+// import { addToCart } from '../actions/cart';
 
 
 const Details = () => {
@@ -19,8 +23,10 @@ const mystate= useSelector ((state)=>state.Numchange);
 const dispatch= useDispatch();
 
 const handleAddedToCart=()=>{
-    
-    dispatch(addToCart(product));
+    toast.success(`${productdetails.title} added to cart!`, {
+        position: 'top-center',
+    });
+    // dispatch(addToCart(product));
 };
 
 return (

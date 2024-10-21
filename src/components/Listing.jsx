@@ -46,7 +46,7 @@ return (
                 const{id, price, title,image}=item;
                 return(
                     <div key={id}
-                    className="Cardsections1 h-auto w-[250px] p-3 md:h-auto md:w-[300px] flex flex-col justify-between items-center gap-2 flex-grow-0 flex-shrink-0 rounded-xl bg-white">
+                    className="Cardsections1 h-auto w-[250px] p-3 md:h-[420px] md:w-[300px] flex flex-col justify-between items-center gap-2 flex-grow-0 flex-shrink-0 rounded-xl bg-white">
                     <img src={image} className=' h-[150px] md:h-[200px] w-[90%] rounded-xl' alt='cardphoto'/>
                     <h1 className='font-sans text-sm md:text-xl font-semibold'>{title}</h1>
                     <h1 className='font-sans text-sm md:text-xl font-semibold'>$ {price}</h1>

@@ -3,10 +3,10 @@ import Nav from "./Nav";
 //ICONS
 import { RiDeleteBin5Line } from "react-icons/ri";
 
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 const Cart = () => {
-    const cartItems=useSelector((state)=>state.cart.cartItems);
+    // const cartItems=useSelector((state)=>state.cart.cartItems);
 
 return (
     <div className='main w-full h-[800px] bg-appleblack'>
