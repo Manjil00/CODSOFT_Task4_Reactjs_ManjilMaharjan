@@ -18,7 +18,8 @@ const Details = () => {
 const mystate= useSelector ((state)=>state.Numchange);
 const dispatch= useDispatch();
 
-const handleaddtoCart=()=>{
+const handleAddedToCart=()=>{
+    
     dispatch(addToCart(product));
 };
 
@@ -51,8 +52,8 @@ return (
 
         <div className="btns flex justify-evenly items-center gap-6">
 
-                <Link to="/cart"><button onClick={handleaddtoCart}
-                className='h-[50px] w-[150px] bg-green-600 rounded-xl mt-5'>Add To Cart</button></Link>
+    <button onClick={handleAddedToCart}
+                className='h-[50px] w-[150px] bg-green-600 rounded-xl mt-5'>Add To Cart</button>
                 <button className='h-[50px] w-[150px] bg-green-600 rounded-xl mt-5'>Buy now</button>
         </div>
                 </div>
