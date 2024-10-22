@@ -1,13 +1,12 @@
-import React from 'react'
-import Nav from './Nav';
+import React from 'react';
 import { useParams } from 'react-router-dom';
+import Nav from './Nav';
 
-import { useSelector , useDispatch } from "react-redux";
-import {incrNum, decrNum} from "../actions/index";
+import { useDispatch, useSelector } from "react-redux";
+import { decrNum, incrNum } from "../actions/index";
 
-import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // import { addToCart } from '../actions/cart';
 
@@ -23,7 +22,7 @@ const mystate= useSelector ((state)=>state.Numchange);
 const dispatch= useDispatch();
 
 const handleAddedToCart=()=>{
-    toast.success(`${productdetails.title} added to cart!`, {
+    toast.success(`${productdetails.title}  Added to Cart!`, {
         position: 'top-center',
     });
     // dispatch(addToCart(product));
@@ -46,7 +45,7 @@ return (
                     animi minima asperdsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfsfiores ratione laborum?</p>
 
                 <div className="incrDecr mt-5 bg-green-800 h-[50px] w-[200px] rounded-xl flex justify-between items-center">
-                    <button onClick={()=>dispatch(decrNum())}
+                    <button onClick={()=>mystate > 0 ? dispatch((decrNum())) : 0}
                     className='h-[50px] w-[50px] rounded-tl-xl rounded-bl-xl  text-white'>-</button>
                     
                     <h1 className='font-bold font-sans text-center'>{mystate}</h1>
