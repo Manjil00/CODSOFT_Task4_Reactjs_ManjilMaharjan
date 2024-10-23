@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { RxCross1, RxHamburgerMenu } from "react-icons/rx"; //ICONS
 import { Link } from 'react-router-dom';
+import { useSelector } from "react-redux";
 
 
 const Nav = () => {
-    const [isNavOpen, setIsNavOpen] = useState(false);
+
+    const cartItems = useSelector((state) => state.cart.cartItems);
+    const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+
+const [isNavOpen, setIsNavOpen] = useState(false);
 const toggleNavMenu = () => setIsNavOpen(!isNavOpen);
 
 return (
@@ -18,7 +23,7 @@ cursor-pointer flex justify-center items-center'>Product Catalog</h1>
         <ul className=" cursor-pointer flex flex-col gap-4 md:flex-row  md:gap-8 md:justify-evenly md:text-xl font-sans">
         <li className="hover:text-slate-600">Home</li>
         <Link to="/"><li className="hover:text-slate-600">Products</li></Link>
-        <Link to="/cart"><li className="hover:text-slate-600">Cart</li></Link>
+        <Link to="/cart"><li className="hover:text-slate-600">Cart ({totalItems})</li></Link>
         <li className="hover:text-slate-600">About us</li>
         </ul>
     </div>
